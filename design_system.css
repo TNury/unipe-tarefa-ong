@@ -1,0 +1,384 @@
+/* Design System for GiveLife Charity Website */
+
+/* ===== COLOR PALETTE ===== */
+:root {
+  /* Primary Colors */
+  --primary-green: #219d80;
+  --primary-green-light: rgba(33, 157, 128, 0.2);
+  --primary-green-lighter: rgba(33, 157, 128, 0.08);
+
+  /* Background Colors */
+  --bg-white: #ffffff;
+  --bg-light-gray: #d9d9d9;
+  --bg-dark: #22262f;
+  --bg-overlay: rgba(37, 42, 52, 0.7);
+  --bg-overlay-dark: rgba(37, 42, 52, 0.85);
+
+  /* Text Colors */
+  --text-primary: #252a34;
+  --text-secondary: #444444;
+  --text-muted: #555555;
+  --text-light: #999999;
+  --text-white: #ffffff;
+  --text-light-gray: #eeeeee;
+  --text-gray: #afafaf;
+  --text-very-light: #cccccc;
+
+  /* Accent Colors */
+  --accent-light-green: #edf7f5;
+  --accent-progress-bg: #c7e7df;
+  --accent-border: #dddddd;
+}
+
+/* ===== TYPOGRAPHY ===== */
+:root {
+  /* Font Families */
+  --font-primary: 'Playfair Display', serif;
+  --font-secondary: 'Montserrat', sans-serif;
+  --font-nunito: 'Nunito', sans-serif;
+
+  /* Font Sizes */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+  --text-4xl: 39px;
+  --text-5xl: 48px;
+  --text-6xl: 72px;
+
+  /* Line Heights */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --leading-loose: 1.8;
+}
+
+/* ===== SPACING SYSTEM ===== */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+}
+
+/* ==== TEXT STYLES ===== */
+.text-white {
+  color: var(--text-white);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.heading-primary {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: var(--text-6xl);
+  line-height: 90px;
+  text-transform: capitalize;
+}
+
+.heading-secondary {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: var(--text-4xl);
+  line-height: 50px;
+  text-transform: capitalize;
+}
+
+.heading-tertiary {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  line-height: 28px;
+  text-transform: capitalize;
+}
+
+.text-body {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: var(--text-base);
+  line-height: 26px;
+}
+
+.text-small {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: var(--text-sm);
+  line-height: 22px;
+}
+
+/* ==== COMPONENT STYLES ===== */
+.btn {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  font-size: var(--text-base);
+  line-height: var(--leading-tight);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.btn-primary {
+  background-color: var(--primary-green);
+  color: var(--text-white);
+}
+
+.btn-primary:hover {
+  background-color: #1a7d66;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-white);
+  border: 1px solid var(--primary-green);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-green);
+  color: var(--text-white);
+}
+
+.btn-outline-dark {
+  background-color: transparent;
+  color: var(--primary-green);
+  border: 1px solid var(--primary-green);
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--primary-green);
+  color: var(--text-white);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  padding: var(--space-4) 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.logo-text {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: var(--text-3xl);
+  line-height: 30px;
+  color: var(--text-white);
+  text-transform: capitalize;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-20);
+}
+
+.nav-menu {
+  display: flex;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.nav-link {
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  font-size: var(--text-base);
+  line-height: 27px;
+  color: var(--text-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-white);
+  text-decoration: underline;
+}
+
+.card {
+  background-color: var(--bg-white);
+  border-radius: 8px;
+  box-shadow: 0px 10px 30px 0px rgba(37, 42, 52, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 40px 0px rgba(37, 42, 52, 0.12);
+}
+
+.card-image-container {
+  width: 100%;
+  height: 250px;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: var(--space-6);
+}
+
+.card-title {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  text-transform: capitalize;
+}
+
+.card-description {
+  font-family: var(--font-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.progress-container {
+  background-color: var(--accent-progress-bg);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: var(--primary-green);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.section {
+  padding: var(--space-32) 0;
+  display: flex;
+}
+
+.section-title {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: var(--text-lg);
+  line-height: 28px;
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  padding: var(--space-20) 0 var(--space-12);
+}
+
+.footer-container {
+  flex-direction: column;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+.footer-section {
+  width: fit-content;
+}
+
+.footer-section h3 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: var(--text-base);
+  line-height: 24px;
+  margin-bottom: var(--space-6);
+  text-transform: capitalize;
+}
+
+.footer-section p,
+.footer-section a {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: var(--text-base);
+  line-height: 24px;
+  color: var(--text-gray);
+  text-decoration: none;
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.footer-section a:hover {
+  color: var(--text-white);
+}
+
+.footer-bottom {
+  text-align: center;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--text-gray);
+  margin-bottom: var(--space-6);
+}
+
+.footer-copyright {
+  font-family: var(--font-nunito);
+  font-size: var(--text-sm);
+  color: var(--text-light);
+}
