@@ -382,3 +382,51 @@
   font-size: var(--text-sm);
   color: var(--text-light);
 }
+
+/* ===== FORM COMPONENTS ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group__label {
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  font-size: var(--text-base);
+  line-height: 24px;
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+.input,
+.textarea {
+  background-color: var(--accent-light-green);
+  border: 1px solid #d9d7d7;
+  border-radius: 4px;
+  padding: var(--space-3) var(--space-5);
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: var(--text-sm);
+  line-height: 20px;
+  color: var(--text-primary);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #777777;
+  text-transform: capitalize;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 2px rgba(33, 157, 128, 0.2);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
