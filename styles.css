@@ -68,7 +68,7 @@ body {
 }
 
 .hero-content {
-  max-width: 765px;
+  max-width: 865px;
   text-align: center;
   z-index: 2;
 }
@@ -200,6 +200,8 @@ body {
   background-color: var(--accent-light-green);
   padding: var(--space-6);
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 .mission-icon,
@@ -213,6 +215,11 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--primary-green);
+}
+
+.mission-card__title,
+.vision-card__title {
+  margin-bottom: var(--space-1);
 }
 
 .progress-item {
