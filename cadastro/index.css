@@ -1,38 +1,38 @@
-.become-a-volunteer-hero {
+.register--hero {
   height: 400px;
   background: linear-gradient(rgba(37, 42, 52, 0.65), rgba(37, 42, 52, 0.65));
 }
 
-.become-a-volunteer-hero .hero-title {
+.register--hero .hero-title {
   font-size: var(--text-5xl);
   line-height: 60px;
   margin-bottom: var(--space-4);
   text-transform: capitalize;
 }
 
-.become-a-volunteer-section {
+.register--section {
   padding: var(--space-20) 0;
 }
 
-.become-a-volunteer-container {
+.register--container {
   flex-direction: column;
   gap: var(--space-16);
 }
 
-.become-a-volunteer-content {
+.register--content {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: var(--space-16);
   align-items: start;
 }
 
-.become-a-volunteer-form-section {
+.register--form-section {
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
 }
 
-.become-a-volunteer-form {
+.register--form {
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
@@ -47,19 +47,19 @@
   gap: var(--space-6);
 }
 
-.become-a-volunteer-info {
+.register--info {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
 
-.become-a-volunteer-item {
+.register--item {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
 }
 
-.become-a-volunteer-label {
+.register--label {
   font-family: var(--font-secondary);
   font-weight: 600;
   font-size: var(--text-base);
@@ -68,7 +68,7 @@
   text-transform: capitalize;
 }
 
-.become-a-volunteer-value {
+.register--value {
   font-family: var(--font-secondary);
   font-weight: 400;
   font-size: var(--text-base);
