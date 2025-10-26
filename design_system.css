@@ -186,6 +186,7 @@
   z-index: 1000;
   background: transparent;
   padding: var(--space-4) 0;
+  transition: background-color 0.3s ease;
 }
 
 .logo {
@@ -195,18 +196,8 @@
   text-decoration: none;
 }
 
-.logo-icon {
-  width: 32px;
-  height: 32px;
-}
-
-.logo-text {
-  font-family: var(--font-primary);
-  font-weight: 700;
-  font-size: var(--text-3xl);
-  line-height: 30px;
-  color: var(--text-white);
-  text-transform: capitalize;
+.logo__media {
+  width: fit-content;
 }
 
 .navbar {
