@@ -11,6 +11,10 @@ body {
   background-color: var(--bg-white);
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .body-layout {
   display: grid;
   grid-template-columns: repeat(12, 1fr);

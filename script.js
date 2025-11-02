@@ -1,18 +1,48 @@
-document.addEventListener('DOMContentLoaded', function () {
+function handleHeaderScroll() {
   const header = document.querySelector('.header');
   let lastScrollTop = 0;
 
-  window.addEventListener('scroll', function () {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > 100) {
-      header.style.backgroundColor = '#252A34B2';
-      header.style.backdropFilter = 'blur(10px)';
+  if (currentScrollTop > 100) {
+    header.dataset.active = 'true';
+  } else {
+    header.dataset.active = 'false';
+  }
+
+  window.addEventListener('scroll', function () {
+    const updatedScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (updatedScrollTop > 100) {
+      header.dataset.active = 'true';
     } else {
-      header.style.backgroundColor = 'transparent';
-      header.style.backdropFilter = 'none';
+      header.dataset.active = 'false';
     }
 
-    lastScrollTop = scrollTop;
+    lastScrollTop = updatedScrollTop;
   });
+}
+
+function handleNavMenuDrawerButton() {
+  const body = document.body;
+  const navMenuDrawerButton = document.getElementById('nav-menu-button');
+  const navMenuDrawer = document.getElementById('nav-menu-drawer');
+  const navMenuDrawerBackdrop = document.getElementById('nav-menu-drawer-backdrop');
+
+  navMenuDrawerButton.addEventListener('click', function () {
+    body.classList.toggle('no-scroll');
+    const isDrawerOpened = navMenuDrawer.dataset.active === 'true';
+    navMenuDrawer.dataset.active = isDrawerOpened ? 'false' : 'true';
+  });
+
+  navMenuDrawerBackdrop.addEventListener('click', function () {
+    body.classList.toggle('no-scroll');
+    const isDrawerOpened = navMenuDrawer.dataset.active === 'true';
+    navMenuDrawer.dataset.active = isDrawerOpened ? 'false' : 'true';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  handleHeaderScroll();
+  handleNavMenuDrawerButton();
 });

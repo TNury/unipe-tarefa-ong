@@ -21,13 +21,33 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="body-layout">
-    <header class="header">
+    <header data-active="false" class="header">
       <nav class="navbar">
         <a href="./index.html" class="logo">
           <img src="./assets/media/give-life-logo.svg" alt="Heart" class="logo__media" />
         </a>
 
-        <div class="nav-menu">
+        <button id="nav-menu-button" class="nav-menu-button">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+
+        <div id="nav-menu-drawer" data-active="false" class="nav-menu-drawer">
+          <div id="nav-menu-drawer-backdrop" class="nav-menu-drawer-backdrop"></div>
+          <div class="nav-menu-drawer-content">
+            <a href="#" class="nav-link active">Início</a>
+            <a href="#sobre" class="nav-link">Sobre</a>
+            <a href="#crencas" class="nav-link">Crenças</a>
+            <a href="#contato" class="nav-link">Contato</a>
+            <a href="./projetos" class="nav-link">Projetos</a>
+            <a href="./cadastro" class="btn btn-primary">Seja um voluntário</a>
+          </div>
+        </div>
+
+        <div class="nav-menu-desktop">
           <a href="#" class="nav-link active">Início</a>
           <a href="#sobre" class="nav-link">Sobre</a>
           <a href="#crencas" class="nav-link">Crenças</a>
@@ -35,7 +55,7 @@
           <a href="./projetos" class="nav-link">Projetos</a>
         </div>
 
-        <div class="nav-actions">
+        <div class="nav-actions-desktop">
           <a href="./cadastro" class="btn btn-primary">Seja um voluntário</a>
         </div>
       </nav>
