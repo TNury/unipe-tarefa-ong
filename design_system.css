@@ -1,6 +1,5 @@
 /* Design System for GiveLife Charity Website */
 
-/* ===== COLOR PALETTE ===== */
 :root {
   /* Primary Colors */
   --primary-green: #219d80;
@@ -28,10 +27,7 @@
   --accent-light-green: #edf7f5;
   --accent-progress-bg: #c7e7df;
   --accent-border: #dddddd;
-}
 
-/* ===== TYPOGRAPHY ===== */
-:root {
   /* Font Families */
   --font-primary: 'Playfair Display', serif;
   --font-secondary: 'Montserrat', sans-serif;
@@ -54,10 +50,8 @@
   --leading-normal: 1.5;
   --leading-relaxed: 1.6;
   --leading-loose: 1.8;
-}
 
-/* ===== SPACING SYSTEM ===== */
-:root {
+  /* Spacing System */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -71,6 +65,58 @@
   --space-20: 80px;
   --space-24: 96px;
   --space-32: 128px;
+
+  --breakpoint-xs: 360px;   
+  --breakpoint-sm: 576px;   
+  --breakpoint-md: 768px;   
+  --breakpoint-lg: 1024px;  
+  --breakpoint-xl: 1440px;
+  --breakpoint-xxl: 1920px;
+}
+
+/* ===== GRID SYSTEM ===== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-6);
+  width: 100%;
+}
+
+.col-1 {
+  grid-column: span 1;
+}
+.col-2 {
+  grid-column: span 2;
+}
+.col-3 {
+  grid-column: span 3;
+}
+.col-4 {
+  grid-column: span 4;
+}
+.col-5 {
+  grid-column: span 5;
+}
+.col-6 {
+  grid-column: span 6;
+}
+.col-7 {
+  grid-column: span 7;
+}
+.col-8 {
+  grid-column: span 8;
+}
+.col-9 {
+  grid-column: span 9;
+}
+.col-10 {
+  grid-column: span 10;
+}
+.col-11 {
+  grid-column: span 11;
+}
+.col-12 {
+  grid-column: span 12;
 }
 
 /* ==== TEXT STYLES ===== */

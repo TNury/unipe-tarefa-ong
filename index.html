@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="design_system.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="body-layout">
     <header class="header">
       <nav class="navbar">
         <a href="./index.html" class="logo">
@@ -41,213 +41,215 @@
       </nav>
     </header>
 
-    <section class="hero">
-      <div class="hero-background">
-        <img src="./assets/media/hero-bg.png" alt="Hero Background" class="hero-bg-image" />
-      </div>
-      <div class="hero-content">
-        <p class="hero-subtitle">Dê esperança para os sem-teto</p>
-        <h1 class="hero-title">Ajudar uns aos outros <br />torna o mundo melhor</h1>
-
-        <p class="hero-description">
-          Buscamos pessoas que mudam o mundo e fazem a diferença em todo o <br />
-          globo, e as equipamos para cumprir seu propósito único.
-        </p>
-        <div class="hero-buttons">
-          <a href="#" class="btn btn-primary">Doe agora</a>
-          <a href="./cadastro" class="btn btn-outline">Seja um voluntário</a>
+    <main class="main">
+      <section class="hero">
+        <div class="hero-background">
+          <img src="./assets/media/hero-bg.png" alt="Hero Background" class="hero-bg-image" />
         </div>
-      </div>
-    </section>
+        <div class="hero-content">
+          <p class="hero-subtitle">Dê esperança para os sem-teto</p>
+          <h1 class="hero-title">Ajudar uns aos outros <br />torna o mundo melhor</h1>
 
-    <section class="section" id="sobre">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-images-container">
-            <div class="about-image-main">
-              <img src="./assets/media/about-us-media-1.jpg" alt="About Us" class="about-img" />
-            </div>
-            <div class="about-image-secondary">
-              <img src="./assets/media/about-us-media-2.jpg" alt="About Us Secondary" class="about-img" />
-            </div>
-          </div>
-          <div class="about-text">
-            <div class="section-header">
-              <p class="section-title">Sobre nós</p>
-              <div class="section-divider"></div>
-              <h2 class="heading-secondary text-primary">Seu apoio é realmente<br />muito poderoso​</h2>
-              <p class="text-body text-secondary">
-                O segredo do bem-estar se encontra em ajudar os outros. <br />
-                Nunca subestime a diferença que você pode fazer na<br />vida das pessoas pobres, abusadas e
-                desamparadas.
-              </p>
-            </div>
+          <p class="hero-description">
+            Buscamos pessoas que mudam o mundo e fazem a diferença em todo o <br />
+            globo, e as equipamos para cumprir seu propósito único.
+          </p>
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary">Doe agora</a>
+            <a href="./cadastro" class="btn btn-outline">Seja um voluntário</a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="crencas">
-      <div class="container">
-        <div class="our-beliefs-content">
-          <div class="our-beliefs-text">
-            <div class="section-header">
-              <p class="section-title">Nossas Crenças</p>
-              <div class="section-divider"></div>
-              <h2 class="heading-secondary text-primary">
-                Vamos nos unir para <br />
-                fazer a diferença
-              </h2>
-              <p class="text-body text-secondary">
-                Juntos podemos fazer a diferença. Juntos podemos mudar o mundo. Juntos podemos fazer o bem. Juntos
-                podemos fazer o melhor.
-              </p>
-            </div>
-
-            <div class="mission-vision">
-              <div class="mission-card">
-                <div class="mission-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </div>
-                <h3 class="mission-card__title heading-tertiary text-primary">Nossa missão</h3>
-                <p class="text-small text-muted">É ajudar as pessoas em situação de vulnerabilidade social.</p>
+      <section class="section" id="sobre">
+        <div class="container">
+          <div class="about-content">
+            <div class="about-images-container">
+              <div class="about-image-main">
+                <img src="./assets/media/about-us-media-1.jpg" alt="About Us" class="about-img" />
               </div>
-
-              <div class="vision-card">
-                <div class="vision-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M12 6C8.69 6 6 8.69 6 12C6 15.31 8.69 18 12 18C15.31 18 18 15.31 18 12C18 8.69 15.31 6 12 6ZM12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16Z"
-                      fill="currentColor"
-                    />
-                    <circle cx="12" cy="12" r="2" fill="currentColor" />
-                  </svg>
-                </div>
-                <h3 class="vision-card__title heading-tertiary text-primary">Nossa visão</h3>
-                <p class="text-small text-muted">
-                  É um mundo onde todas as pessoas têm acesso aos recursos necessários para viver uma vida digna.
+              <div class="about-image-secondary">
+                <img src="./assets/media/about-us-media-2.jpg" alt="About Us Secondary" class="about-img" />
+              </div>
+            </div>
+            <div class="about-text">
+              <div class="section-header">
+                <p class="section-title">Sobre nós</p>
+                <div class="section-divider"></div>
+                <h2 class="heading-secondary text-primary">Seu apoio é realmente<br />muito poderoso​</h2>
+                <p class="text-body text-secondary">
+                  O segredo do bem-estar se encontra em ajudar os outros. <br />
+                  Nunca subestime a diferença que você pode fazer na<br />vida das pessoas pobres, abusadas e
+                  desamparadas.
                 </p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div class="our-beliefs-images">
-            <div class="our-beliefs-image-main">
-              <img src="./assets/media/our-beliefs-media-1.jpg" alt="Our Beliefs" class="our-beliefs-img" />
+      <section class="section" id="crencas">
+        <div class="container">
+          <div class="our-beliefs-content">
+            <div class="our-beliefs-text">
+              <div class="section-header">
+                <p class="section-title">Nossas Crenças</p>
+                <div class="section-divider"></div>
+                <h2 class="heading-secondary text-primary">
+                  Vamos nos unir para <br />
+                  fazer a diferença
+                </h2>
+                <p class="text-body text-secondary">
+                  Juntos podemos fazer a diferença. Juntos podemos mudar o mundo. Juntos podemos fazer o bem. Juntos
+                  podemos fazer o melhor.
+                </p>
+              </div>
+
+              <div class="mission-vision">
+                <div class="mission-card">
+                  <div class="mission-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <h3 class="mission-card__title heading-tertiary text-primary">Nossa missão</h3>
+                  <p class="text-small text-muted">É ajudar as pessoas em situação de vulnerabilidade social.</p>
+                </div>
+
+                <div class="vision-card">
+                  <div class="vision-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M12 6C8.69 6 6 8.69 6 12C6 15.31 8.69 18 12 18C15.31 18 18 15.31 18 12C18 8.69 15.31 6 12 6ZM12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16Z"
+                        fill="currentColor"
+                      />
+                      <circle cx="12" cy="12" r="2" fill="currentColor" />
+                    </svg>
+                  </div>
+                  <h3 class="vision-card__title heading-tertiary text-primary">Nossa visão</h3>
+                  <p class="text-small text-muted">
+                    É um mundo onde todas as pessoas têm acesso aos recursos necessários para viver uma vida digna.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="our-beliefs-image-secondary">
-              <img src="./assets/media/our-beliefs-media-2.jpg" alt="Our Beliefs Secondary" class="our-beliefs-img" />
+
+            <div class="our-beliefs-images">
+              <div class="our-beliefs-image-main">
+                <img src="./assets/media/our-beliefs-media-1.jpg" alt="Our Beliefs" class="our-beliefs-img" />
+              </div>
+              <div class="our-beliefs-image-secondary">
+                <img src="./assets/media/our-beliefs-media-2.jpg" alt="Our Beliefs Secondary" class="our-beliefs-img" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="contato">
-      <div class="container contact-section-container">
-        <div class="section-header contact-section-header">
-          <p class="section-title">Entre em contato</p>
-          <div class="section-divider"></div>
-          <h2 class="heading-secondary text-primary">Mande uma mensagem</h2>
-        </div>
-
-        <div class="contact-content">
-          <div class="contact-info">
-            <div class="contact-card">
-              <div class="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5Z"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                  <path d="M3 7L12 13L21 7" stroke="currentColor" stroke-width="2" />
-                </svg>
-              </div>
-              <div class="contact-details">
-                <h3 class="contact-title">Email</h3>
-                <p class="contact-text">info@givelife.org</p>
-              </div>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.59531 1.99522 8.06679 2.16708 8.43376 2.48353C8.80073 2.79999 9.03996 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97366 7.27691 9.89391 7.65088C9.81415 8.02485 9.62886 8.36811 9.35999 8.64L8.08999 9.91C9.51355 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9605 21.2094 15.2032 21.5265 15.5735C21.8437 15.9438 22.0122 16.4197 22 16.92Z"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <div class="contact-details">
-                <h3 class="contact-title">Telefone</h3>
-                <p class="contact-text">+1 (555) 123-4567</p>
-              </div>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.3639 3.63604C20.0518 5.32387 21 7.61305 21 10Z"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                  <path
-                    d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <div class="contact-details">
-                <h3 class="contact-title">Endereço</h3>
-                <p class="contact-text">Rua das Flores, 123</p>
-                <p class="contact-text">São Paulo, SP</p>
-              </div>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-              <div class="contact-details">
-                <h3 class="contact-title">Horários</h3>
-                <p class="contact-text">Segunda - Sexta</p>
-                <p class="contact-text">09:00 - 18:00</p>
-              </div>
-            </div>
+      <section class="section" id="contato">
+        <div class="container contact-section-container">
+          <div class="section-header contact-section-header">
+            <p class="section-title">Entre em contato</p>
+            <div class="section-divider"></div>
+            <h2 class="heading-secondary text-primary">Mande uma mensagem</h2>
           </div>
 
-          <div class="contact-message">
-            <h3 class="contact-subtitle">Mande uma mensagem</h3>
-            <p class="contact-description">
-              Tem dúvidas sobre nossos programas ou quer se envolver? Estamos ansiosos para ouvir de você!
-            </p>
-            <a href="./cadastro" class="btn btn-primary">Seja um voluntário</a>
+          <div class="contact-content">
+            <div class="contact-info">
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path d="M3 7L12 13L21 7" stroke="currentColor" stroke-width="2" />
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <h3 class="contact-title">Email</h3>
+                  <p class="contact-text">info@givelife.org</p>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.59531 1.99522 8.06679 2.16708 8.43376 2.48353C8.80073 2.79999 9.03996 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97366 7.27691 9.89391 7.65088C9.81415 8.02485 9.62886 8.36811 9.35999 8.64L8.08999 9.91C9.51355 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9605 21.2094 15.2032 21.5265 15.5735C21.8437 15.9438 22.0122 16.4197 22 16.92Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <h3 class="contact-title">Telefone</h3>
+                  <p class="contact-text">+1 (555) 123-4567</p>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.3639 3.63604C20.0518 5.32387 21 7.61305 21 10Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <h3 class="contact-title">Endereço</h3>
+                  <p class="contact-text">Rua das Flores, 123</p>
+                  <p class="contact-text">São Paulo, SP</p>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <h3 class="contact-title">Horários</h3>
+                  <p class="contact-text">Segunda - Sexta</p>
+                  <p class="contact-text">09:00 - 18:00</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-message">
+              <h3 class="contact-subtitle">Mande uma mensagem</h3>
+              <p class="contact-description">
+                Tem dúvidas sobre nossos programas ou quer se envolver? Estamos ansiosos para ouvir de você!
+              </p>
+              <a href="./cadastro" class="btn btn-primary">Seja um voluntário</a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <footer class="footer">
       <div class="container footer-container">
