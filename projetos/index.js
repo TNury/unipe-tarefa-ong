@@ -77,6 +77,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const confirmationModal = document.getElementById('confirmation-modal');
+  const confirmationMessage = document.getElementById('confirmation-message');
+  const confirmDonationBtn = document.getElementById('confirm-donation-btn');
+  const cancelConfirmationBtn = document.getElementById('cancel-confirmation-btn');
+
+  function openConfirmationModal(amount, donorName) {
+    const message = `Olá, ${donorName}! Sua doação de ${amount} será muito bem-vinda. Tem certeza que deseja confirmar?`;
+    confirmationMessage.textContent = message;
+    confirmationModal.classList.add('active');
+  }
+
+  function closeConfirmationModal() {
+    confirmationModal.classList.remove('active');
+  }
+
   donationForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(donationForm);
@@ -95,14 +110,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (amount && donorName && donorEmail) {
-      console.debug('Doação realizada:', { amount, donorName, donorEmail });
-      alert('Obrigado pela sua doação! Entraremos em contato em breve.');
-      closeModal();
+      const formattedAmount = formData.get('donation-amount');
+      openConfirmationModal(formattedAmount, donorName);
     }
   });
 
+  confirmDonationBtn.addEventListener('click', () => {
+    const formData = new FormData(donationForm);
+    const amount = formData.get('donation-amount');
+    const donorName = formData.get('donor-name');
+    const donorEmail = formData.get('donor-email');
+    
+    showToast('Doação confirmada com sucesso! Obrigado pela sua generosidade. Entraremos em contato em breve.', 'success');
+    closeConfirmationModal();
+    closeModal();
+  });
+
+  cancelConfirmationBtn.addEventListener('click', closeConfirmationModal);
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
+    if (e.key === 'Escape' && modal.classList.contains('active') && !confirmationModal.classList.contains('active')) {
       closeModal();
     }
   });
