@@ -9,6 +9,7 @@
   /* Background Colors */
   --bg-white: #ffffff;
   --bg-light-gray: #d9d9d9;
+  --bg-gray: #f5f5f5;
   --bg-dark: #22262f;
   --bg-overlay: rgba(37, 42, 52, 0.7);
   --bg-overlay-dark: rgba(37, 42, 52, 0.85);
@@ -197,9 +198,16 @@
   color: var(--text-white);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
   background-color: #1a7d66;
   transform: translateY(-2px);
+}
+
+.btn-primary:disabled {
+  background-color: var(--bg-gray);
+  color: var(--text-muted);
 }
 
 .btn-outline {
@@ -208,9 +216,16 @@
   border: 1px solid var(--primary-green);
 }
 
-.btn-outline:hover {
+.btn-outline:hover,
+.btn-outline:active,
+.btn-outline:focus {
   background-color: var(--primary-green);
   color: var(--text-white);
+}
+
+.btn-outline:disabled {
+  background-color: var(--bg-gray);
+  color: var(--text-muted);
 }
 
 .btn-outline-dark {
@@ -219,9 +234,16 @@
   border: 1px solid var(--primary-green);
 }
 
-.btn-outline-dark:hover {
+.btn-outline-dark:hover,
+.btn-outline-dark:active,
+.btn-outline-dark:focus {
   background-color: var(--primary-green);
   color: var(--text-white);
+}
+
+.btn-outline-dark:disabled {
+  background-color: var(--bg-gray);
+  color: var(--text-muted);
 }
 
 .header {
