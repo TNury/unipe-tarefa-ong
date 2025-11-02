@@ -365,7 +365,6 @@
   text-transform: capitalize;
 }
 
-/* Footer */
 .footer {
   background-color: var(--bg-dark);
   color: var(--text-white);
@@ -377,8 +376,8 @@
 }
 
 .footer-content {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: var(--space-12);
   margin-bottom: var(--space-12);
 }
@@ -486,6 +485,13 @@
 .input:valid:not(:placeholder-shown),
 .textarea:valid:not(:placeholder-shown) {
   border-color: var(--primary-green);
+}
+
+@media (min-width: 576px) {
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (min-width: 1024px) {
