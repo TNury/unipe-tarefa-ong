@@ -66,10 +66,10 @@
   --space-24: 96px;
   --space-32: 128px;
 
-  --breakpoint-xs: 360px;   
-  --breakpoint-sm: 576px;   
-  --breakpoint-md: 768px;   
-  --breakpoint-lg: 1024px;  
+  --breakpoint-xs: 360px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
   --breakpoint-xl: 1440px;
   --breakpoint-xxl: 1920px;
 }
@@ -346,7 +346,7 @@
 }
 
 .section {
-  padding: var(--space-32) 0;
+  padding: var(--space-16) 0;
   display: flex;
 }
 
@@ -486,4 +486,10 @@
 .input:valid:not(:placeholder-shown),
 .textarea:valid:not(:placeholder-shown) {
   border-color: var(--primary-green);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--space-32) 0;
+  }
 }

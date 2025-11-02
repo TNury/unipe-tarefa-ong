@@ -281,15 +281,16 @@ body {
   display: flex;
   gap: var(--space-16);
   align-items: flex-start;
+  flex-direction: column;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .contact-info {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-6);
-  flex: 1;
 }
 
 .contact-card {
@@ -348,11 +349,10 @@ body {
   border-radius: 8px;
   padding: var(--space-8);
   text-align: center;
-  flex: 0 0 300px;
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  justify-content: center;
+  align-items: center;
 }
 
 .contact-subtitle {
@@ -384,6 +384,16 @@ body {
   .mission-vision {
     flex-direction: row;
   }
+
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex: 1;
+  }
+
+  .contact-message {
+    flex: 0 0 300px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -411,6 +421,10 @@ body {
 
   .our-beliefs-image-main {
     width: 380px;
+  }
+
+  .contact-content {
+    flex-direction: row;
   }
 }
 
