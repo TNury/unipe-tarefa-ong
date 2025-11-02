@@ -231,8 +231,10 @@
   right: 0;
   z-index: 1000;
   background: transparent;
-  padding: var(--space-4) 0;
   transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  height: var(--space-16);
 }
 
 .logo {
@@ -247,6 +249,7 @@
 }
 
 .navbar {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
