@@ -13,24 +13,19 @@ body {
 
 .body-layout {
   display: grid;
-  grid-template-areas:
-    'header'
-    'main'
-    'footer';
-  grid-template-rows: auto 1fr auto;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto 1fr;
   min-height: 100vh;
 }
 
-.body-layout > header {
-  grid-area: header;
-}
-
 .body-layout > main {
-  grid-area: main;
+  grid-column: 1/13;
+  grid-row: 1/2;
 }
 
 .body-layout > footer {
-  grid-area: footer;
+  grid-column: 1/13;
+  grid-row: 2/3;
 }
 
 .main {
