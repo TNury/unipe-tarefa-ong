@@ -1,5 +1,6 @@
 .projects-hero {
   height: 400px;
+  min-height: unset;
   background: linear-gradient(rgba(37, 42, 52, 0.65), rgba(37, 42, 52, 0.65));
 }
 
@@ -26,7 +27,7 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--space-8);
 }
 
