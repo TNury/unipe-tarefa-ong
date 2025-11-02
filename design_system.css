@@ -685,6 +685,105 @@
   align-items: center;
 }
 
+/* ===== TOASTS ===== */
+.toast-container {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  width: calc(100vw - var(--space-12));
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  min-width: 300px;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0px 10px 30px 0px rgba(37, 42, 52, 0.15);
+  font-family: var(--font-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  pointer-events: auto;
+  animation: toastSlideIn 0.3s ease-out;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.hiding {
+  animation: toastSlideOut 0.3s ease-out forwards;
+}
+
+.toast-success {
+  background-color: #4caf50;
+  color: var(--text-white);
+}
+
+.toast-error {
+  background-color: #dc3545;
+  color: var(--text-white);
+}
+
+.toast-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.toast-message {
+  flex: 1;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+}
+
+.toast-close:hover {
+  opacity: 1;
+}
+
+@keyframes toastSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
 @media (min-width: 576px) {
   .footer-content {
     display: grid;
@@ -715,5 +814,11 @@
 
   .nav-menu-button {
     display: none;
+  }
+
+  .toast-container {
+    width: fit-content;
+    bottom: unset;
+    top: calc(var(--space-16) + var(--space-6));
   }
 }

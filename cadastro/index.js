@@ -88,4 +88,73 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.error('CEP input not found');
   }
+
+  const form = document.querySelector('.register--form');
+  if (form) {
+    form.addEventListener('submit', handleFormSubmit);
+  }
 });
+
+function showToast(message, type) {
+  const toastContainer = document.getElementById('toast-container');
+  if (!toastContainer) return;
+
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+
+  const iconSvg =
+    type === 'success'
+      ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/></svg>'
+      : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/></svg>';
+
+  toast.innerHTML = `
+    <div class="toast-icon">${iconSvg}</div>
+    <div class="toast-message">${message}</div>
+    <button class="toast-close" aria-label="Fechar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/>
+      </svg>
+    </button>
+  `;
+
+  const closeButton = toast.querySelector('.toast-close');
+  closeButton.addEventListener('click', () => {
+    hideToast(toast);
+  });
+
+  toastContainer.appendChild(toast);
+
+  setTimeout(() => {
+    hideToast(toast);
+  }, 5000);
+}
+
+function hideToast(toast) {
+  toast.classList.add('hiding');
+  setTimeout(() => {
+    if (toast.parentNode) {
+      toast.parentNode.removeChild(toast);
+    }
+  }, 300);
+}
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const formData = new FormData(form);
+
+  const stateField = formData.get('state');
+
+  if (stateField !== 'PB') {
+    showToast('Desculpe, mas nosso serviço está disponível apenas para o estado da Paraíba.', 'error');
+    return;
+  }
+
+  showToast('Cadastro realizado com sucesso! Entraremos em contato em breve.', 'success');
+  form.reset();
+  const birthDateInput = document.getElementById('birthDate');
+  if (birthDateInput) {
+    birthDateInput.value = getMaximumBirthDate();
+  }
+}
