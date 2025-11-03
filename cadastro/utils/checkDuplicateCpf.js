@@ -1,4 +1,4 @@
-import { getRegisteredVolunteers } from './localStorage.js';
+import { getRegisteredVolunteers } from '../../utils/getRegisteredVolunteers.js';
 import { normalizeCpf } from './normalizeCpf.js';
 
 export function checkDuplicateCpf(cpf) {

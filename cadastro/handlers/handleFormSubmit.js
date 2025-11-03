@@ -1,9 +1,8 @@
 import { getMaximumBirthDate } from '../utils/getMaximumBirthDate.js';
-import { saveRegisteredVolunteer } from '../utils/localStorage.js';
+import { saveRegisteredVolunteer } from '../utils/saveRegisteredVolunteer.js';
 import { checkDuplicateCpf } from '../utils/checkDuplicateCpf.js';
 import { checkDuplicateEmail } from '../utils/checkDuplicateEmail.js';
 import { checkDuplicatePhone } from '../utils/checkDuplicatePhone.js';
-import { renderVolunteers } from '../utils/renderVolunteers.js';
 
 export function handleFormSubmit(event) {
   event.preventDefault();
@@ -52,8 +51,7 @@ export function handleFormSubmit(event) {
   const saved = saveRegisteredVolunteer(volunteerData);
 
   if (saved) {
-    showToast('Cadastro realizado com sucesso! Entraremos em contato em breve.', 'success');
-    renderVolunteers();
+    showToast('Cadastro realizado com sucesso! Entraremos em contato em breve. Já pode ver sua inscrição na página de voluntários.', 'success');
     form.reset();
     const birthDateInput = document.getElementById('birthDate');
     if (birthDateInput) {

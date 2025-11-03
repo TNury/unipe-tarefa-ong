@@ -3,10 +3,8 @@ import { handlePhoneInputOnChange } from './handlers/handlePhoneInputOnChange.js
 import { handleCepInputOnChange } from './handlers/handleCepInputOnChange.js';
 import { handleCpfInputOnChange } from './handlers/handleCpfInputOnChange.js';
 import { handleFormSubmit } from './handlers/handleFormSubmit.js';
-import { renderVolunteers } from './utils/renderVolunteers.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderVolunteers();
   const phoneInput = document.getElementById('phone');
   if (phoneInput) {
     phoneInput.addEventListener('input', handlePhoneInputOnChange);

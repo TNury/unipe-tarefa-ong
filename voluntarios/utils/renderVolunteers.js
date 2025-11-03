@@ -1,6 +1,6 @@
 import { DEFAULT_VOLUNTEERS } from '../constant.js';
-import { getRegisteredVolunteers } from './localStorage.js';
 import { renderVolunteerDetails } from './renderVolunteerDetails.js';
+import { getRegisteredVolunteers } from '../../utils/getRegisteredVolunteers.js';
 
 function createVolunteerCard(volunteer) {
   const volunteerCard = document.createElement('div');
@@ -42,6 +42,7 @@ export function renderVolunteers() {
   volunteersGrid.innerHTML = '';
 
   const registeredVolunteers = getRegisteredVolunteers();
+
   const allVolunteers = [...DEFAULT_VOLUNTEERS, ...registeredVolunteers];
 
   allVolunteers.forEach((volunteer) => {
@@ -49,4 +50,3 @@ export function renderVolunteers() {
     volunteersGrid.appendChild(volunteerCard);
   });
 }
-

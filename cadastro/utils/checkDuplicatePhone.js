@@ -1,4 +1,4 @@
-import { getRegisteredVolunteers } from './localStorage.js';
+import { getRegisteredVolunteers } from '../../utils/getRegisteredVolunteers.js';
 import { normalizePhone } from './normalizePhone.js';
 
 export function checkDuplicatePhone(phone) {

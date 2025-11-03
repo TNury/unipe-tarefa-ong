@@ -1,4 +1,4 @@
-import { getRegisteredVolunteers } from './localStorage.js';
+import { getRegisteredVolunteers } from '../../utils/getRegisteredVolunteers.js';
 
 export function checkDuplicateEmail(email) {
   const registeredVolunteers = getRegisteredVolunteers();
