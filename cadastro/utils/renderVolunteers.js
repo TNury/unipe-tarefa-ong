@@ -1,9 +1,11 @@
 import { DEFAULT_VOLUNTEERS } from '../constant.js';
 import { getRegisteredVolunteers } from './localStorage.js';
+import { renderVolunteerDetails } from './renderVolunteerDetails.js';
 
 function createVolunteerCard(volunteer) {
   const volunteerCard = document.createElement('div');
   volunteerCard.className = 'volunteer-card';
+  volunteerCard.style.cursor = 'pointer';
 
   const volunteerAvatar = document.createElement('div');
   volunteerAvatar.className = 'volunteer-avatar';
@@ -21,6 +23,10 @@ function createVolunteerCard(volunteer) {
 
   volunteerCard.appendChild(volunteerAvatar);
   volunteerCard.appendChild(volunteerName);
+
+  volunteerCard.addEventListener('click', () => {
+    renderVolunteerDetails(volunteer);
+  });
 
   return volunteerCard;
 }
