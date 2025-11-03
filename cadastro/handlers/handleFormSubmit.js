@@ -1,5 +1,8 @@
 import { getMaximumBirthDate } from '../utils/getMaximumBirthDate.js';
 import { saveRegisteredVolunteer } from '../utils/localStorage.js';
+import { checkDuplicateCpf } from '../utils/checkDuplicateCpf.js';
+import { checkDuplicateEmail } from '../utils/checkDuplicateEmail.js';
+import { checkDuplicatePhone } from '../utils/checkDuplicatePhone.js';
 import { renderVolunteers } from '../utils/renderVolunteers.js';
 
 export function handleFormSubmit(event) {
@@ -30,6 +33,21 @@ export function handleFormSubmit(event) {
     city: formData.get('city'),
     state: formData.get('state')
   };
+
+  if (checkDuplicateCpf(volunteerData.cpf)) {
+    showToast('Este CPF já está cadastrado. Por favor, use outro CPF.', 'error');
+    return;
+  }
+
+  if (checkDuplicateEmail(volunteerData.email)) {
+    showToast('Este email já está cadastrado. Por favor, use outro email.', 'error');
+    return;
+  }
+
+  if (checkDuplicatePhone(volunteerData.phone)) {
+    showToast('Este telefone já está cadastrado. Por favor, use outro telefone.', 'error');
+    return;
+  }
 
   const saved = saveRegisteredVolunteer(volunteerData);
 
