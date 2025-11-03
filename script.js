@@ -85,7 +85,21 @@ function handleNavMenuDrawerButton() {
   });
 }
 
+function handleNavDropdownMobileToggle() {
+  const dropdownToggleMobile = document.getElementById('nav-dropdown-toggle-mobile');
+  if (dropdownToggleMobile) {
+    dropdownToggleMobile.addEventListener('click', function () {
+      const dropdown = document.getElementById('nav-dropdown-mobile');
+
+      if (dropdown) {
+        dropdown.classList.toggle('active');
+      }
+    });
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   handleHeaderScroll();
   handleNavMenuDrawerButton();
+  handleNavDropdownMobileToggle();
 });
