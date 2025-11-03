@@ -1,3 +1,6 @@
+import { renderProjects } from './utils/renderProjects.js';
+import { PROJECTS } from './constant.js';
+
 function formatCurrencyInput(event) {
   const input = event.target;
   let value = input.value.replace(/\D/g, '');
@@ -19,7 +22,9 @@ function formatCurrencyInput(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const donationButtons = document.querySelectorAll('.donation-btn');
+  // Renderizar projetos dinamicamente
+  renderProjects();
+
   const modal = document.getElementById('donation-modal');
   const modalClose = modal.querySelector('.modal-close');
   const modalCancel = modal.querySelector('.modal-cancel');
@@ -32,13 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
     
-    const descriptions = {
-      'Ajuda para a alimentação': 'Ajude-nos a fornecer alimentos para os sem-teto e aqueles que precisam.',
-      'Crianças que cuidamos': 'Contribua para fornecer moradia e cuidado para as crianças sem-teto.',
-      'Ajuda para a educação': 'Apoie nosso projeto de educação e ferramentas para autossuficiência.'
-    };
+    const project = PROJECTS.find(p => p.title === projectName);
+    const description = project 
+      ? project.description 
+      : 'Ajude-nos a alcançar nossos objetivos fazendo uma doação.';
     
-    modalProjectDescription.textContent = descriptions[projectName] || 'Ajude-nos a alcançar nossos objetivos fazendo uma doação.';
+    modalProjectDescription.textContent = description;
   }
 
   function closeModal() {
@@ -60,13 +64,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  donationButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      const projectName = button.getAttribute('data-project');
-      openModal(projectName);
+  // Usar event delegation para botões criados dinamicamente
+  const projectsGrid = document.getElementById('projects-grid');
+  if (projectsGrid) {
+    projectsGrid.addEventListener('click', (e) => {
+      if (e.target.classList.contains('donation-btn') || e.target.closest('.donation-btn')) {
+        e.preventDefault();
+        const button = e.target.classList.contains('donation-btn') 
+          ? e.target 
+          : e.target.closest('.donation-btn');
+        const projectName = button.getAttribute('data-project');
+        openModal(projectName);
+      }
     });
-  });
+  }
 
   modalClose.addEventListener('click', closeModal);
   modalCancel.addEventListener('click', closeModal);

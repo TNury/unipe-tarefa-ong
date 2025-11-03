@@ -92,103 +92,8 @@
           <h2 class="heading-secondary text-primary">Ajude-nos a alcançar<br />nossos objetivos</h2>
         </div>
 
-        <div class="projects-grid">
-          <div id="alimentacao" class="card project-card">
-            <div class="card-image-container">
-              <img src="../assets/media/projects-food-media.jpg" alt="Food" class="card-image" />
-            </div>
-            <div class="card-content">
-              <div class="badges-tags-container">
-                <span class="tag tag-primary tag-small">Alimentação</span>
-                <span class="badge badge-danger badge-small">Urgente</span>
-              </div>
-              <h3 class="card-title">Ajuda para a alimentação</h3>
-              <p class="card-description">Fornecemos alimentos para os sem-teto e aqueles que precisam.</p>
-
-              <div class="project-progress">
-                <div class="progress-header">
-                  <span class="progress-label">Progresso</span>
-                  <span class="progress-percentage">75%</span>
-                </div>
-                <div class="progress-container">
-                  <div class="progress-bar" style="width: 75%"></div>
-                </div>
-                <div class="progress-stats">
-                  <span>Arrecadado: R$ 1.500</span>
-                  <span>Objetivo: R$ 2.000</span>
-                </div>
-              </div>
-
-              <button type="button" class="btn btn-primary donation-btn" data-project="Ajuda para a alimentação">
-                Doe Agora
-              </button>
-            </div>
-          </div>
-
-          <div id="criancas" class="card project-card">
-            <div class="card-image-container">
-              <img src="../assets/media/projects-children-media.jpg" alt="Homeless Children" class="card-image" />
-            </div>
-            <div class="card-content">
-              <div class="badges-tags-container">
-                <span class="tag tag-success tag-small">Cuidados</span>
-                <span class="badge badge-danger badge-small">Urgente</span>
-                <span class="badge badge-warning badge-small">Quase completo</span>
-              </div>
-              <h3 class="card-title">Crianças que cuidamos</h3>
-              <p class="card-description">Fornecemos moradia e cuidado para as crianças sem-teto.</p>
-
-              <div class="project-progress">
-                <div class="progress-header">
-                  <span class="progress-label">Progresso</span>
-                  <span class="progress-percentage">85%</span>
-                </div>
-                <div class="progress-container">
-                  <div class="progress-bar" style="width: 85%"></div>
-                </div>
-                <div class="progress-stats">
-                  <span>Arrecadado: R$ 8.500</span>
-                  <span>Objetivo: R$ 10.000</span>
-                </div>
-              </div>
-
-              <button type="button" class="btn btn-primary donation-btn" data-project="Crianças que cuidamos">
-                Doe Agora
-              </button>
-            </div>
-          </div>
-
-          <div id="educacao" class="card project-card">
-            <div class="card-image-container">
-              <img src="../assets/media/projects-education-media.jpg" alt="Education" class="card-image" />
-            </div>
-            <div class="card-content">
-              <div class="badges-tags-container">
-                <span class="tag tag-info tag-small">Educação</span>
-                <span class="badge badge-success badge-small">Completo</span>
-              </div>
-              <h3 class="card-title">Ajuda para a educação</h3>
-              <p class="card-description">Fornecemos educação e ferramentas para atingir a autossuficiência.</p>
-
-              <div class="project-progress">
-                <div class="progress-header">
-                  <span class="progress-label">Progresso</span>
-                  <span class="progress-percentage">100%</span>
-                </div>
-                <div class="progress-container">
-                  <div class="progress-bar" style="width: 100%"></div>
-                </div>
-                <div class="progress-stats">
-                  <span>Arrecadado: R$ 10.000</span>
-                  <span>Objetivo: R$ 10.000</span>
-                </div>
-              </div>
-
-              <button type="button" class="btn btn-primary donation-btn" data-project="Ajuda para a educação">
-                Doe Agora
-              </button>
-            </div>
-          </div>
+        <div class="projects-grid" id="projects-grid">
+          <!-- Projetos serão renderizados dinamicamente via JavaScript -->
         </div>
       </div>
     </section>
@@ -316,6 +221,6 @@
     <div id="toast-container" class="toast-container"></div>
 
     <script src="../script.js"></script>
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>
