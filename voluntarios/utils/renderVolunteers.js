@@ -1,35 +1,7 @@
 import { DEFAULT_VOLUNTEERS } from '../constant.js';
 import { renderVolunteerDetails } from './renderVolunteerDetails.js';
 import { getRegisteredVolunteers } from '../../utils/getRegisteredVolunteers.js';
-
-function createVolunteerCard(volunteer) {
-  const volunteerCard = document.createElement('div');
-  volunteerCard.className = 'volunteer-card';
-  volunteerCard.style.cursor = 'pointer';
-
-  const volunteerAvatar = document.createElement('div');
-  volunteerAvatar.className = 'volunteer-avatar';
-
-  const avatarImage = document.createElement('img');
-  avatarImage.src = volunteer.avatar;
-  avatarImage.alt = volunteer.name;
-  avatarImage.className = 'volunteer-avatar-image';
-
-  volunteerAvatar.appendChild(avatarImage);
-
-  const volunteerName = document.createElement('h3');
-  volunteerName.className = 'volunteer-name';
-  volunteerName.textContent = volunteer.name;
-
-  volunteerCard.appendChild(volunteerAvatar);
-  volunteerCard.appendChild(volunteerName);
-
-  volunteerCard.addEventListener('click', () => {
-    renderVolunteerDetails(volunteer);
-  });
-
-  return volunteerCard;
-}
+import { createVolunteerCardTemplate } from '../templates/createVolunteerCardTemplate.js';
 
 export function renderVolunteers() {
   const volunteersGrid = document.getElementById('volunteers-grid');
@@ -46,7 +18,10 @@ export function renderVolunteers() {
   const allVolunteers = [...DEFAULT_VOLUNTEERS, ...registeredVolunteers];
 
   allVolunteers.forEach((volunteer) => {
-    const volunteerCard = createVolunteerCard(volunteer);
+    const volunteerCard = createVolunteerCardTemplate(volunteer);
+    volunteerCard.addEventListener('click', () => {
+      renderVolunteerDetails(volunteer);
+    });
     volunteersGrid.appendChild(volunteerCard);
   });
 }
