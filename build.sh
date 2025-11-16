@@ -2,8 +2,8 @@
 npm run build
 
 git switch production
-git rm -rf .
 cp -r dist/* .
+git rm -rf .
 git add .
 git commit -m "Deploy"
 git push -f origin production
