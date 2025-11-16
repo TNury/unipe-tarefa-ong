@@ -1,5 +1,10 @@
-export function createVolunteerCardTemplate(volunteer) {
-  const card = document.createElement('div');
+export function createVolunteerCardTemplate(volunteer, index) {
+  const card = document.createElement('button');
+
+  if (index !== undefined) {
+    card.tabIndex = index + 1;
+  }
+
   card.className = 'volunteer-card';
   card.style.cursor = 'pointer';
 
@@ -22,4 +27,3 @@ export function createVolunteerCardTemplate(volunteer) {
 
   return card;
 }
-

@@ -14,6 +14,11 @@ export function renderVolunteerDetails(volunteer) {
   const detailsPanel = createVolunteerDetailsPanelTemplate(volunteer);
 
   const backButton = detailsPanel.querySelector('.volunteer-details-back');
+
+  setTimeout(() => {
+    backButton.focus();
+  }, 1);
+
   backButton.addEventListener('click', () => {
     renderVolunteers();
   });

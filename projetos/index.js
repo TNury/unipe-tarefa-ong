@@ -4,25 +4,24 @@ import { PROJECTS } from './constant.js';
 function formatCurrencyInput(event) {
   const input = event.target;
   let value = input.value.replace(/\D/g, '');
-  
+
   if (value === '') {
     input.value = '';
     return;
   }
-  
+
   value = parseInt(value, 10) / 100;
-  
+
   const formattedValue = value.toLocaleString('pt-BR', {
     style: 'currency',
     currency: 'BRL',
     minimumFractionDigits: 2
   });
-  
+
   input.value = formattedValue;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Renderizar projetos dinamicamente
   renderProjects();
 
   const modal = document.getElementById('donation-modal');
@@ -36,12 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
   function openModal(projectName) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    
-    const project = PROJECTS.find(p => p.title === projectName);
-    const description = project 
-      ? project.description 
-      : 'Ajude-nos a alcançar nossos objetivos fazendo uma doação.';
-    
+
+    const donationAmountInput = document.getElementById('donation-amount');
+    if (donationAmountInput) {
+      donationAmountInput.focus();
+    }
+
+    const project = PROJECTS.find((p) => p.title === projectName);
+    const description = project ? project.description : 'Ajude-nos a alcançar nossos objetivos fazendo uma doação.';
+
     modalProjectDescription.textContent = description;
   }
 
@@ -70,9 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     projectsGrid.addEventListener('click', (e) => {
       if (e.target.classList.contains('donation-btn') || e.target.closest('.donation-btn')) {
         e.preventDefault();
-        const button = e.target.classList.contains('donation-btn') 
-          ? e.target 
-          : e.target.closest('.donation-btn');
+        const button = e.target.classList.contains('donation-btn') ? e.target : e.target.closest('.donation-btn');
         const projectName = button.getAttribute('data-project');
         openModal(projectName);
       }
@@ -95,6 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openConfirmationModal(amount, donorName) {
     const message = `Olá, ${donorName}! Sua doação de ${amount} será muito bem-vinda. Tem certeza que deseja confirmar?`;
+
+    const confirmDonationButton = document.getElementById('confirm-donation-btn');
+    confirmDonationButton.focus();
+
     confirmationMessage.textContent = message;
     confirmationModal.classList.add('active');
   }
@@ -113,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (amount) {
       amount = amount.replace(/[^\d,]/g, '').replace(',', '.');
       const numericAmount = parseFloat(amount);
-      
+
       if (isNaN(numericAmount) || numericAmount <= 0) {
         alert('Por favor, insira um valor válido para a doação.');
         return;
@@ -131,8 +135,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const amount = formData.get('donation-amount');
     const donorName = formData.get('donor-name');
     const donorEmail = formData.get('donor-email');
-    
-    showToast('Doação confirmada com sucesso! Obrigado pela sua generosidade. Entraremos em contato em breve.', 'success');
+
+    showToast(
+      'Doação confirmada com sucesso! Obrigado pela sua generosidade. Entraremos em contato em breve.',
+      'success'
+    );
     closeConfirmationModal();
     closeModal();
   });
@@ -145,4 +152,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-

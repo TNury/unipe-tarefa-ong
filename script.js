@@ -27,9 +27,11 @@ function showToast(message, type) {
 
   toastContainer.appendChild(toast);
 
-  setTimeout(() => {
-    hideToast(toast);
-  }, 5000);
+  closeButton.focus();
+
+  // setTimeout(() => {
+  //   hideToast(toast);
+  // }, 5000);
 }
 
 function hideToast(toast) {
@@ -93,6 +95,17 @@ function handleNavDropdownMobileToggle() {
 
       if (dropdown) {
         dropdown.classList.toggle('active');
+
+        const dropdownItems = dropdown.querySelectorAll('.nav-dropdown-item');
+        if (dropdown.classList.contains('active')) {
+          dropdownItems.forEach((item) => {
+            item.setAttribute('tabindex', '0');
+          });
+        } else {
+          dropdownItems.forEach((item) => {
+            item.setAttribute('tabindex', '-1');
+          });
+        }
       }
     });
   }

@@ -17,8 +17,8 @@ export function renderVolunteers() {
 
   const allVolunteers = [...DEFAULT_VOLUNTEERS, ...registeredVolunteers];
 
-  allVolunteers.forEach((volunteer) => {
-    const volunteerCard = createVolunteerCardTemplate(volunteer);
+  allVolunteers.forEach((volunteer, index) => {
+    const volunteerCard = createVolunteerCardTemplate(volunteer, index);
     volunteerCard.addEventListener('click', () => {
       renderVolunteerDetails(volunteer);
     });

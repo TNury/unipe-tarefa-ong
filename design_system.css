@@ -28,6 +28,7 @@
   --accent-light-green: #edf7f5;
   --accent-progress-bg: #c7e7df;
   --accent-border: #dddddd;
+  --accent-highlight: #007bff;
 
   /* Font Families */
   --font-primary: 'Playfair Display', serif;
@@ -73,6 +74,12 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1440px;
   --breakpoint-xxl: 1920px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent-highlight);
+  outline-offset: 4px;
 }
 
 /* ===== GRID SYSTEM ===== */
@@ -302,18 +309,20 @@
   inset: 0;
   z-index: 2;
   justify-content: end;
-  transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
   display: flex;
 }
 
 .nav-menu-drawer[data-active='false'] {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .nav-menu-drawer[data-active='true'] {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
 }
 
 .nav-menu-button {
@@ -344,10 +353,19 @@
 
 .nav-menu-desktop {
   display: none;
+  visibility: hidden;
+}
+
+.nav-menu-destkop .nav-link {
+  visibility: visible;
 }
 
 .nav-actions-desktop {
   display: none;
+  visibility: hidden;
+}
+.nav-actions-desktop a {
+  visibility: hidden;
 }
 
 .nav-link:hover,
@@ -377,10 +395,6 @@
   transition: transform 0.3s ease;
 }
 
-.nav-dropdown:hover .nav-dropdown-toggle::after {
-  transform: rotate(180deg);
-}
-
 .nav-dropdown-menu {
   position: absolute;
   top: 100%;
@@ -400,12 +414,6 @@
   padding: var(--space-2);
 }
 
-.nav-dropdown:hover .nav-dropdown-menu {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
 .nav-dropdown-item {
   display: block;
   padding: var(--space-3) var(--space-4);
@@ -414,8 +422,11 @@
   font-size: var(--text-sm);
   color: var(--text-primary);
   text-decoration: none;
-  border-radius: 4px;
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-dropdown-item:focus-visible {
+  outline-offset: -2px;
 }
 
 .nav-dropdown-item:hover {
@@ -900,13 +911,19 @@
   justify-content: center;
   width: 20px;
   height: 20px;
-  opacity: 0.8;
+  opacity: 1;
   transition: opacity 0.2s ease;
   flex-shrink: 0;
 }
 
-.toast-close:hover {
-  opacity: 1;
+.toast-close:focus {
+  outline: 2px solid var(--accent-highlight);
+  outline-offset: 4px;
+}
+
+.toast-close:focus-visible {
+  outline: 2px solid var(--accent-highlight);
+  outline-offset: 4px;
 }
 
 @keyframes toastSlideIn {
@@ -1111,16 +1128,41 @@
     display: flex;
     gap: var(--space-8);
     align-items: center;
+    visibility: visible;
+  }
+
+  .nav-menu-desktop .nav-link {
+    visibility: visible;
   }
 
   .nav-actions-desktop {
     display: flex;
     align-items: center;
     gap: var(--space-6);
+    visibility: visible;
+  }
+
+  .nav-actions-desktop a {
+    visibility: visible;
+  }
+
+  .nav-menu-drawer .nav-link {
+    visibility: hidden;
   }
 
   .nav-menu-button {
     display: none;
+    visibility: hidden;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-toggle::after {
+    transform: rotate(180deg);
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   .toast-container {
