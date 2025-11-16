@@ -62,7 +62,7 @@ npm run build:js
 ### 1. Crie sua branch
 
 ```
-git switch main
+git switch production
 git pull
 git switch -c feature/nome-da-feature
 git push --set-upstream origin feature/nome-da-feature
@@ -70,7 +70,7 @@ git push --set-upstream origin feature/nome-da-feature
 
 ### 2. Abrir pull request
 
-Após finalizar a contribuição, abra um pull request para a branch main e aguarde a aprovação do revisor.
+Após finalizar a contribuição, abra um pull request para a branch `main` e aguarde a aprovação do revisor.
 
 ### 3. Após o merge na `main`
 
