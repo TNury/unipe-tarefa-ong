@@ -2,7 +2,8 @@
   "name": "givelife-ong",
   "version": "1.0.0",
   "scripts": {
-    "build": "npm run build:html && npm run build:css && npm run build:js",
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run build:html && npm run build:css && npm run build:js",
     "build:html": "html-minifier-terser --input-dir . --output-dir dist --file-ext html --collapse-whitespace --remove-comments",
     "build:css": "npm run build:css:root && npm run build:css:pages",
     "build:css:root": "cleancss -o dist/design_system.min.css design_system.css && cleancss -o dist/styles.min.css styles.css",
@@ -12,6 +13,7 @@
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
     "html-minifier-terser": "^7.2.0",
+    "rimraf": "^5.0.5",
     "terser": "^5.26.0"
   }
 }
