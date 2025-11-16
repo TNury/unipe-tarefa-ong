@@ -1,0 +1,17 @@
+{
+  "name": "givelife-ong",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm run build:html && npm run build:css && npm run build:js",
+    "build:html": "html-minifier-terser --input-dir . --output-dir dist --file-ext html --collapse-whitespace --remove-comments",
+    "build:css": "npm run build:css:root && npm run build:css:pages",
+    "build:css:root": "cleancss -o dist/design_system.min.css design_system.css && cleancss -o dist/styles.min.css styles.css",
+    "build:css:pages": "cleancss -o dist/cadastro/index.min.css cadastro/index.css && cleancss -o dist/projetos/index.min.css projetos/index.css && cleancss -o dist/voluntarios/index.min.css voluntarios/index.css",
+    "build:js": "terser *.js -o dist/script.min.js --compress --mangle"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "html-minifier-terser": "^7.2.0",
+    "terser": "^5.26.0"
+  }
+}
