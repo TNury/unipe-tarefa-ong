@@ -1,4 +1,5 @@
-pm run build
+#!/bin/bash
+npm run build
 
 git switch production
 git rm -rf .
