@@ -2,7 +2,8 @@
   "name": "givelife-ong",
   "version": "1.0.0",
   "scripts": {
-    "build": "npm run build:html && npm run build:css && npm run build:js:root && npm run build:js:cadastro && npm run build:js:projetos && npm run build:js:voluntarios",
+    "build": "bash build.sh",
+    "build-all": "npm run build:html && npm run build:css && npm run build:js:root && npm run build:js:cadastro && npm run build:js:projetos && npm run build:js:voluntarios",
     "build:html": "html-minifier-terser --input-dir . --output-dir dist --file-ext html --collapse-whitespace --remove-comments",
     "build:css": "npm run build:css:root && npm run build:css:pages",
     "build:css:root": "cleancss -o dist/design_system.css design_system.css && cleancss -o dist/styles.css styles.css",
