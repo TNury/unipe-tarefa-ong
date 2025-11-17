@@ -1,4 +1,4 @@
-function showToast(message, type) {
+export function showToast(message, type) {
   const toastContainer = document.getElementById('toast-container');
   if (!toastContainer) return;
 
@@ -29,9 +29,9 @@ function showToast(message, type) {
 
   closeButton.focus();
 
-  // setTimeout(() => {
-  //   hideToast(toast);
-  // }, 5000);
+  setTimeout(() => {
+    hideToast(toast);
+  }, 5000);
 }
 
 function hideToast(toast) {
