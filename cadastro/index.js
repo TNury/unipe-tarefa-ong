@@ -1,42 +1,9 @@
-import { getMaximumBirthDate } from './utils/getMaximumBirthDate.js';
-import { handlePhoneInputOnChange } from './handlers/handlePhoneInputOnChange.js';
-import { handleCepInputOnChange } from './handlers/handleCepInputOnChange.js';
-import { handleCpfInputOnChange } from './handlers/handleCpfInputOnChange.js';
-import { handleFormSubmit } from './handlers/handleFormSubmit.js';
-
-document.addEventListener('DOMContentLoaded', () => {
-  const phoneInput = document.getElementById('phone');
-  if (phoneInput) {
-    phoneInput.addEventListener('input', handlePhoneInputOnChange);
-  } else {
-    console.error('Phone input not found');
-  }
-
-  const birthDateInput = document.getElementById('birthDate');
-
-  if (birthDateInput) {
-    birthDateInput.max = getMaximumBirthDate();
-    birthDateInput.value = getMaximumBirthDate();
-  } else {
-    console.error('Birth date input not found');
-  }
-
-  const cpfInput = document.getElementById('cpf');
-  if (cpfInput) {
-    cpfInput.addEventListener('input', handleCpfInputOnChange);
-  } else {
-    console.error('CPF input not found');
-  }
-
-  const cepInput = document.getElementById('cep');
-  if (cepInput) {
-    cepInput.addEventListener('input', handleCepInputOnChange);
-  } else {
-    console.error('CEP input not found');
-  }
-
-  const form = document.querySelector('.register--form');
-  if (form) {
-    form.addEventListener('submit', handleFormSubmit);
-  }
-});
+(()=>{function a(){let t=new Date,n=new Date(t);return n.setFullYear(t.getFullYear()-18),n.toISOString().split("T")[0]}function p(t){let e=t.target.value.replace(/\D/g,"").slice(0,11),o="";e.length<=2?o=e:e.length<=6?o=`(${e.slice(0,2)}) ${e.slice(2)}`:e.length<=10?o=`(${e.slice(0,2)}) ${e.slice(2,6)}-${e.slice(6)}`:o=`(${e.slice(0,2)}) ${e.slice(2,7)}-${e.slice(7)}`,t.target.value=o}function f(t){let e=t.target.value.replace(/\D/g,"").slice(0,8),o="";e.length<=5?o=e:o=`${e.slice(0,5)}-${e.slice(5)}`,t.target.value=o}function g(t){let e=t.target.value.replace(/\D/g,"").slice(0,11),o="";e.length<=3?o=e:e.length<=6?o=`${e.slice(0,3)}.${e.slice(3)}`:e.length<=9?o=`${e.slice(0,3)}.${e.slice(3,6)}.${e.slice(6)}`:o=`${e.slice(0,3)}.${e.slice(3,6)}.${e.slice(6,9)}-${e.slice(9)}`,t.target.value=o}function i(t,n){let e=document.getElementById("toast-container");if(!e)return;let o=document.createElement("div");o.className=`toast toast-${n}`;let r=n==="success"?'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/></svg>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/></svg>';o.innerHTML=`
+    <div class="toast-icon">${r}</div>
+    <div class="toast-message">${t}</div>
+    <button class="toast-close" aria-label="Fechar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/>
+      </svg>
+    </button>
+  `;let c=o.querySelector(".toast-close");c.addEventListener("click",()=>{h(o)}),e.appendChild(o),c.focus(),setTimeout(()=>{h(o)},5e3)}function h(t){t.classList.add("hiding"),setTimeout(()=>{t.parentNode&&t.parentNode.removeChild(t)},300)}function S(){let t=document.querySelector(".header"),n=0;(window.pageYOffset||document.documentElement.scrollTop)>100?t.dataset.active="true":t.dataset.active="false",window.addEventListener("scroll",function(){let o=window.pageYOffset||document.documentElement.scrollTop;o>100?t.dataset.active="true":t.dataset.active="false",n=o})}function I(){let t=document.body,n=document.getElementById("nav-menu-button"),e=document.getElementById("nav-menu-drawer"),o=document.getElementById("nav-menu-drawer-backdrop");n.addEventListener("click",function(){t.classList.toggle("no-scroll");let r=e.dataset.active==="true";e.dataset.active=r?"false":"true"}),o.addEventListener("click",function(){t.classList.toggle("no-scroll");let r=e.dataset.active==="true";e.dataset.active=r?"false":"true"})}function y(){let t=document.getElementById("nav-dropdown-toggle-mobile");t&&t.addEventListener("click",function(){let n=document.getElementById("nav-dropdown-mobile");if(n){n.classList.toggle("active");let e=n.querySelectorAll(".nav-dropdown-item");n.classList.contains("active")?e.forEach(o=>{o.setAttribute("tabindex","0")}):e.forEach(o=>{o.setAttribute("tabindex","-1")})}})}document.addEventListener("DOMContentLoaded",function(){S(),I(),y()});var l="registered_volunteers";function v(t){let n=localStorage.getItem(t);if(!n)return null;try{return JSON.parse(n)}catch(e){return console.error("Error parsing value from localStorage:",e),null}}function s(){return v(l)||[]}function E(t){let n=s(),e={name:t.fullName,avatar:`https://ui-avatars.com/api/?name=${encodeURIComponent(t.fullName)}&background=219d80&color=fff&size=128`,email:t.email,phone:t.phone,cpf:t.cpf,birthDate:t.birthDate,street:t.street,cep:t.cep,city:t.city,state:t.state,registeredAt:new Date().toISOString()};n.push(e);try{return localStorage.setItem(l,JSON.stringify(n)),!0}catch(o){return console.error("Error saving registered volunteer to localStorage:",o),!1}}function d(t){return t.replace(/\D/g,"")}function w(t){let n=s(),e=d(t);return n.some(o=>d(o.cpf)===e)}function C(t){let n=s(),e=t.toLowerCase().trim();return n.some(o=>o.email.toLowerCase().trim()===e)}function u(t){return t.replace(/\D/g,"")}function L(t){let n=s(),e=u(t);return e?n.some(o=>{let r=u(o.phone);return r&&r===e}):!1}function D(t){t.preventDefault();let n=t.target,e=new FormData(n),o=e.get("state");if(o.toLowerCase()!=="s\xE3o paulo"&&o.toLowerCase()!=="sp"&&o.toLowerCase()!=="sao paulo"){i("Desculpe, mas nosso servi\xE7o est\xE1 dispon\xEDvel apenas para o estado de S\xE3o Paulo.","error");return}let r={fullName:e.get("fullName"),email:e.get("email"),phone:e.get("phone"),cpf:e.get("cpf"),birthDate:e.get("birthDate"),street:e.get("street"),cep:e.get("cep"),city:e.get("city"),state:e.get("state")};if(w(r.cpf)){i("Este CPF j\xE1 est\xE1 cadastrado. Por favor, use outro CPF.","error");return}if(C(r.email)){i("Este email j\xE1 est\xE1 cadastrado. Por favor, use outro email.","error");return}if(L(r.phone)){i("Este telefone j\xE1 est\xE1 cadastrado. Por favor, use outro telefone.","error");return}if(E(r)){i("Cadastro realizado com sucesso! Entraremos em contato em breve. J\xE1 pode ver sua inscri\xE7\xE3o na p\xE1gina de volunt\xE1rios.","success"),n.reset();let m=document.getElementById("birthDate");m&&(m.value=a())}else i("Erro ao salvar o cadastro. Tente novamente.","error")}document.addEventListener("DOMContentLoaded",()=>{let t=document.getElementById("phone");t?t.addEventListener("input",p):console.error("Phone input not found");let n=document.getElementById("birthDate");n?(n.max=a(),n.value=a()):console.error("Birth date input not found");let e=document.getElementById("cpf");e?e.addEventListener("input",g):console.error("CPF input not found");let o=document.getElementById("cep");o?o.addEventListener("input",f):console.error("CEP input not found");let r=document.querySelector(".register--form");r&&r.addEventListener("submit",D)});})();
