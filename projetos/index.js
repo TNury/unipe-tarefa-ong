@@ -1,3 +1,4 @@
+import { showToast } from '../script.js';
 import { renderProjects } from './utils/renderProjects.js';
 import { PROJECTS } from './constant.js';
 
@@ -131,11 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   confirmDonationBtn.addEventListener('click', () => {
-    const formData = new FormData(donationForm);
-    const amount = formData.get('donation-amount');
-    const donorName = formData.get('donor-name');
-    const donorEmail = formData.get('donor-email');
-
     showToast(
       'Doação confirmada com sucesso! Obrigado pela sua generosidade. Entraremos em contato em breve.',
       'success'
