@@ -11,11 +11,6 @@ Site institucional de uma ONG com foco em voluntariado e doações, desenvolvido
 ```bash
 # Build completo (minificação de HTML, CSS e JS)
 npm run build
-
-# Build individual
-npm run build:html
-npm run build:css
-npm run build:js
 ```
 
 ## Tecnologias
@@ -25,7 +20,7 @@ npm run build:js
 - JavaScript (ES6+)
 - `html-minifier-terser` para minificação de HTML
 - `clean-css-cli` para minificação de CSS
-- `terser` para minificação de JavaScript
+- `esbuild` para minificação de JavaScript
 
 ## Páginas
 
@@ -62,10 +57,12 @@ npm run build:js
 ### 1. Crie sua branch
 
 ```
-git switch production
+# Type pode ser feat, fix, chore, etc.
+
+git switch main
 git pull
-git switch -c feature/nome-da-feature
-git push --set-upstream origin feature/nome-da-feature
+git switch -c [type]/nome-da-feature
+git push --set-upstream origin [type]/nome-da-feature
 ```
 
 ### 2. Abrir pull request
