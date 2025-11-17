@@ -2,18 +2,19 @@
   "name": "givelife-ong",
   "version": "1.0.0",
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "npm run clean && npm run build:html && npm run build:css && npm run build:js",
+    "build": "npm run build:html && npm run build:css && npm run build:js:root && npm run build:js:cadastro && npm run build:js:projetos && npm run build:js:voluntarios",
     "build:html": "html-minifier-terser --input-dir . --output-dir dist --file-ext html --collapse-whitespace --remove-comments",
     "build:css": "npm run build:css:root && npm run build:css:pages",
-    "build:css:root": "cleancss -o dist/design_system.min.css design_system.css && cleancss -o dist/styles.min.css styles.css",
-    "build:css:pages": "cleancss -o dist/cadastro/index.min.css cadastro/index.css && cleancss -o dist/projetos/index.min.css projetos/index.css && cleancss -o dist/voluntarios/index.min.css voluntarios/index.css",
-    "build:js": "terser *.js -o dist/script.min.js --compress --mangle"
+    "build:css:root": "cleancss -o dist/design_system.css design_system.css && cleancss -o dist/styles.css styles.css",
+    "build:css:pages": "cleancss -o dist/cadastro/index.css cadastro/index.css && cleancss -o dist/projetos/index.css projetos/index.css && cleancss -o dist/voluntarios/index.css voluntarios/index.css",
+    "build:js:root": "esbuild script.js --bundle --minify --outfile=dist/script.js",
+    "build:js:cadastro": "esbuild cadastro/index.js --bundle --minify --outfile=dist/cadastro/index.js",
+    "build:js:projetos": "esbuild projetos/index.js --bundle --minify --outfile=dist/projetos/index.js",
+    "build:js:voluntarios": "esbuild voluntarios/index.js --bundle --minify --outfile=dist/voluntarios/index.js"
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
     "html-minifier-terser": "^7.2.0",
-    "rimraf": "^5.0.5",
-    "terser": "^5.26.0"
+    "esbuild": "^0.19.0"
   }
 }
