@@ -29,9 +29,9 @@ function showToast(message, type) {
 
   closeButton.focus();
 
-  // setTimeout(() => {
-  //   hideToast(toast);
-  // }, 5000);
+  setTimeout(() => {
+    hideToast(toast);
+  }, 5000);
 }
 
 function hideToast(toast) {
